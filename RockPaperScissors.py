@@ -10,26 +10,10 @@ Difficulties=Player_Options
 #AI will not choose, each difficulty has a different probability of outcome
 #AI's roll will result in a win, lose or draw
 
-def Easy():
-	if AI in range(1,6):
+def Play(x,y):
+	if AI in range(1,x):
 		Win()
-	elif AI in range(6,9):
-		Draw()
-	else:
-		Lose()
-
-def Medium():
-	if AI in range(1,5):
-		Win()
-	elif AI in range(5,7):
-		Draw()
-	else:
-		Lose()
-
-def Hard():
-	if AI in range(1,4):
-		Win()
-	elif AI in range(4,7):
+	elif AI in range(x,y):
 		Draw()
 	else:
 		Lose()
@@ -67,7 +51,7 @@ while True:
                     Player=input("1:Rock, 2:Paper, 3:Scissors")
                     if Player in Player_Options:
                         P1ayer=int(Player)-1
-                        Easy()
+                        Play(6,9)
                         break
                     else:
                         continue
@@ -78,7 +62,7 @@ while True:
                     Player=input("1:Rock, 2:Paper, 3:Scissors")
                     if Player in Player_Options:
                         P1ayer=int(Player)-1
-                        Medium()
+                        Play(5,7)
                         break
                     else:
                         continue
@@ -89,7 +73,7 @@ while True:
                     Player=input("1:Rock, 2:Paper, 3:Scissors")
                     if Player in Player_Options:
                         P1ayer=int(Player)-1
-                        Hard()
+                        Play(4,7)
                         break
                     else:
                         continue                
