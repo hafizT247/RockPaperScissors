@@ -10,13 +10,14 @@ Difficulties=Player_Options
 #AI will not choose, each difficulty has a different probability of outcome
 #AI's roll will result in a win, lose or draw
 
-def Play(Outcome1,Outcome2,Outcome3,x,y):
-    if AI in range(1,x):
-        Outcome1
-    elif AI in range(x,y):
-        Outcome2
-    else:
-        Outcome3
+def Play(x,y):
+	if AI in range(1,x):
+		Win()
+	elif AI in range(x,y):
+		Draw()
+	else:
+		Lose()
+
 #AI's roll will result in the outcome, we manipulate AI's choice using indexing
 #Hence why the lists were arranged in that manner
 def Win():
@@ -50,7 +51,7 @@ while True:
                     Player=input("1:Rock, 2:Paper, 3:Scissors")
                     if Player in Player_Options:
                         P1ayer=int(Player)-1
-                        Play(Win(),Draw(),Lose(),6,9)
+                        Play(6,9)
                         break
                     else:
                         continue
@@ -61,7 +62,7 @@ while True:
                     Player=input("1:Rock, 2:Paper, 3:Scissors")
                     if Player in Player_Options:
                         P1ayer=int(Player)-1
-                        Play(Win(),Lose(),Draw(),5,9)
+                        Play(5,7)
                         break
                     else:
                         continue
@@ -72,7 +73,7 @@ while True:
                     Player=input("1:Rock, 2:Paper, 3:Scissors")
                     if Player in Player_Options:
                         P1ayer=int(Player)-1
-                        Play(Lose(),Draw(),Win(),6,9)
+                        Play(4,7)
                         break
                     else:
                         continue                
